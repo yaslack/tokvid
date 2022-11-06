@@ -3,7 +3,6 @@ import os,time,asyncio
 from requests_html import AsyncHTMLSession
 
 app = Quart(__name__)
-
 path="static/url/"
 
 async def dynamic_page(url):
