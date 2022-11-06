@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TikTok Video Downloader</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+  </head>
+  <body>
+    
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img id="logo" src="../static/assets/tiktok_PNG22.svg" width="70px" height="70px" />
+        </a>
+          <a class="navbar-brand" href="{{ url_for('homePage') }}">TikTok Video Downloader</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navButtonToggler" role="button" ><i class="fa fa-bars" aria-hidden="true"></i></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('homePage') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"  href="{{ url_for('contactPage') }}">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div style="padding-top: 250px;" class="d-flex justify-content-center">
+         <p name="titlePage" >Privacy Policy</p>
+        </div>
+        <div name="list" style="padding-top: 25px;" class="d-flex justify-content-center">
+            <ul>
+                <h2 name="titlePage">Personal identification information</h2>
+                <li>We may collect personal identification information from Users, when Users visit our site, fill out a form, and in connection with other activities, services, features or resources we make available on our Site.
+                Users may visit our Site anonymously. We will collect personal identification information from Users only if they voluntarily submit such information to us.
+                Users can always refuse to supply personally identification information, except that it may prevent them from engaging in certain Site related activities.
+            </li>
+            <h2 name="titlePage">Web browser cookies</h2>
+            <li>
+                The url that you entered are saved by cookies on your web browser, the ads appearing on our site may be delivered to Users by advertising partners, who may set cookies.
+                This information allows ad networks to, among other things, deliver targeted advertisements that they believe will be of most interest to you.
+                Some of the ads may be served by Google.  Google's use of the DART cookie enables it to serve ads to Users based on their visit to our Site and other sites on the Internet.
+                More information here <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a>
+                 This privacy policy does not cover the use of cookies by any advertisers.
+            </li>
+            <h2 name="titlePage">Your acceptance of these terms</h2>
+            <li>
+                By using this Site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our Site.
+                 Your continued use of the Site following the posting of changes to this policy will be deemed your acceptance of those changes.
+            </li>
+        </ul>
+    </div>
+        
+    </main>
+    <footer>
+      <p>We are not affiliated with TikTok, Douyin or Bytedance.</p>
+      <p style="color: rgb(84, 84, 84) !important ">Copyright 2022</p>
+    </footer>
+  </body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</html>
