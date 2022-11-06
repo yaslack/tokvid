@@ -62,31 +62,31 @@ def internal_error(error):
     return redirect(url_for('errorPage'))
     
 @app.errorhandler(403)
-def internal_error(error):
+def internal_error1(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(404)
-def internal_error(error):
+def internal_error2(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(429)
-def internal_error(error):
+def internal_error3(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(500)
-def internal_error(error):
+def internal_error4(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(502)
-def internal_error(error):
+def internal_error5(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(503)
-def internal_error(error):
+def internal_error6(error):
     return redirect(url_for('errorPage'))
 
 @app.errorhandler(504)
-def internal_error(error):
+def internal_error7(error):
     return redirect(url_for('errorPage'))
 
 
