@@ -8,16 +8,22 @@ path="static/url/"
 async def dynamic_page(url):
     try:
         session = AsyncHTMLSession()
+        print("la")
         r = await session.get(url)
+        print("la")
         await r.html.arender()  # this call executes the js in the page
+        print("la")
         data = r.text.encode().decode('unicode-escape')
         element = data.split('"preloadList":[{"url":"',1)[1]
         video_url = element.split('","',1)[0]
         desc = element.split('"desc":"',1)[1].split('","',1)[0]
         cover = element.split('"cover":"',1)[1].split('","',1)[0]
+        print("la")
         await session.close()
+        print("la")
         return (video_url,desc,cover)
     except BaseException as err:
+        print(err)
         url = "error"
     return url
 
