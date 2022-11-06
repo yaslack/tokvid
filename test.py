@@ -1,9 +1,5 @@
-from quart import Quart, render_template, websocket,redirect,request,url_for,session
-import os,time,asyncio
+import asyncio
 from requests_html import AsyncHTMLSession
-
-app = Quart(__name__)
-path="static/url/"
 
 
 async def dynamic_page(url):
