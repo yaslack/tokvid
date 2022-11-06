@@ -7,7 +7,7 @@ path="static/url/"
 
 async def dynamic_page(url):
     try:
-        session = AsyncHTMLSession()
+        session = AsyncHTMLSession(browser_args=["--no-sandbox"])
         print("la")
         r = await session.get(url)
         print("la")
