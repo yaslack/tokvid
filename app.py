@@ -91,4 +91,4 @@ def internal_error7(error):
 
 
 if __name__ == '__main__':
-   app.run()
+   app.run(host=" 45.82.72.10 ", port=8080)
