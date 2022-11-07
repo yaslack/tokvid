@@ -1,25 +1,32 @@
 from quart import Quart, render_template, websocket,redirect,request,url_for,session
 import os,time,asyncio
 from requests_html import AsyncHTMLSession
+from TikTokApi import TikTokApi
+import nest_asyncio
+nest_asyncio.apply()
+
 
 app = Quart(__name__)
 path="static/url/"
 
 async def dynamic_page(url):
     try:
-        session = AsyncHTMLSession()
         print("la")
-        r = await session.get(url)
+    
+        api =  TikTokApi()
         print("la")
-        await r.html.arender()  # this call executes the js in the page
+
+        print(url)
+        data =  api.video(url=url).info()
         print("la")
-        data = r.text.encode().decode('unicode-escape')
-        element = data.split('"preloadList":[{"url":"',1)[1]
-        video_url = element.split('","',1)[0]
-        desc = element.split('"desc":"',1)[1].split('","',1)[0]
-        cover = element.split('"cover":"',1)[1].split('","',1)[0]
+        # Bytes of the TikTok video
+        data=str(data)
         print("la")
-        await session.close()
+        element = data.split("'UrlList': ['",1)[1]
+        video_url = element.split("'",1)[0]
+        element = data.split("'createTime':",1)[1]
+        desc = element.split(", 'desc': ",1)[1].split(',',1)[0]
+        cover = data.split("'cover': '",1)[1].split("'",1)[0]
         print("la")
         return (video_url,desc,cover)
     except BaseException as err:
