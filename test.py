@@ -1,7 +1,10 @@
 from TikTokApi import TikTokApi
 
-# Watch https://www.youtube.com/watch?v=-uCt1x8kINQ for a brief setup tutorial
 with TikTokApi() as api:
-    for trending_video in api.trending.videos(count=50):
-        # Prints the author's username of the trending video.
-        print(trending_video.author.username)
+    video = api.video(id="7041997751718137094")
+
+    # Bytes of the TikTok video
+    video_data = video.bytes()
+
+    with open("out.mp4", "wb") as out_file:
+        out_file.write(video_data)
