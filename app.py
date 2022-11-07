@@ -7,7 +7,7 @@ path="static/url/"
 
 async def dynamic_page(url):
     try:
-        session = AsyncHTMLSession(browser_args=["--no-sandbox"])
+        session = AsyncHTMLSession()
         print("la")
         r = await session.get(url)
         print("la")
@@ -97,4 +97,4 @@ def internal_error7(error):
 
 
 if __name__ == '__main__':
-    app.run(host='45.82.72.10', port=8000)
+    app.run(host='127.0.0.1', port=8000)
