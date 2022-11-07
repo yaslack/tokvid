@@ -1,7 +1,7 @@
 from TikTokApi import TikTokApi
 
 with TikTokApi() as api:
-    video = api.video(id="7041997751718137094")
+    video = api.video(id="7158526081312640262")
 
     # Bytes of the TikTok video
     video_data = video.bytes()
