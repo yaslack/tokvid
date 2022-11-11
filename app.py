@@ -1,4 +1,4 @@
-from quart import Quart, render_template, websocket,redirect,request,url_for,session,Response
+from quart import Quart, render_template, websocket,redirect,request,url_for,session,Response,send_from_directory
 import os,time,asyncio
 from requests_html import AsyncHTMLSession
 from TikTokApi import TikTokApi
@@ -6,15 +6,8 @@ import nest_asyncio
 nest_asyncio.apply()
 
 
-app = Quart(__name__)
+app = Quart(__name__,static_folder='static')
 path="static/url/"
-
-
-@app.route('/robots.txt')
-def noindex():
-    r = Response(response="User-Agent: * \nDisallow:\n", status=200, mimetype="text/plain")
-    r.headers["Content-Type"] = "text/plain; charset=utf-8"
-    return r
 
 async def dynamic_page(url):
     try:
@@ -32,6 +25,20 @@ async def dynamic_page(url):
         print(err)
         url = "error"
     return url
+@app.route('/sitemap.xml')
+def sitemap():
+    f = open("sitemap.xml", "r")
+    string = f.read()
+    r = Response(response=string, status=200, mimetype="application/xml")
+    r.headers["Content-Type"] = "application/xml; charset=utf-8"
+    return r
+
+@app.route('/robots.txt')
+def noindex():
+    r = Response(response="User-Agent: * \nDisallow:\n", status=200, mimetype="text/plain")
+    r.headers["Content-Type"] = "text/plain; charset=utf-8"
+    return r
+
 
 @app.route('/',methods=['GET', 'POST'])
 def home():
@@ -103,4 +110,5 @@ def internal_error7(error):
 
 
 if __name__ == '__main__':
+    app.debug = True
     app.run(host='127.0.0.1', port=8000)

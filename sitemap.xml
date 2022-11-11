@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.tokvid.net/Contact</loc>
+  </url>
+  <url>
+    <loc>http://www.tokvid.net/Home</loc>
+  </url>
+  <url>
+    <loc>http://www.tokvid.net/Privacy</loc>
+  </url>
+  <url>
+    <loc>http://www.tokvid.net/Error</loc>
+  </url>
+  <url>
+    <loc>http://www.tokvid.net/Download</loc>
+  </url>
+</urlset>
