@@ -32,10 +32,10 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="{{ url_for('homePage') }}">
+          <a class="navbar-brand" href="{{ url_for('homePage') }}"  aria-label="Go HomePage">
             <img alt="" id="logo" src="../static/assets/toktok_PNG22.svg" width="70px" height="70px" />
           </a>
-          <a class="navbar-brand" href="#">TikTok Video Downloader</a>
+          <a class="navbar-brand" href="{{ url_for('homePage') }}">TikTok Video Downloader</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navButtonToggler" role="button" ><i class="fa fa-bars" aria-hidden="true"></i></span>
           </button>
