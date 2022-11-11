@@ -1,2 +1,0 @@
-quart==0.18.3
-requests_html==0.10.0

@@ -1,4 +1,4 @@
-from quart import Quart, render_template, websocket,redirect,request,url_for,session
+from quart import Quart, render_template, websocket,redirect,request,url_for,session,Response
 import os,time,asyncio
 from requests_html import AsyncHTMLSession
 from TikTokApi import TikTokApi
@@ -8,6 +8,13 @@ nest_asyncio.apply()
 
 app = Quart(__name__)
 path="static/url/"
+
+
+@app.route('/robots.txt')
+def noindex():
+    r = Response(response="User-Agent: *\nDisallow: /\n", status=200, mimetype="text/plain")
+    r.headers["Content-Type"] = "text/plain; charset=utf-8"
+    return r
 
 async def dynamic_page(url):
     try:
